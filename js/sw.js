@@ -1,6 +1,3 @@
-/**
- * Created by OPM-285 on 2016. 03. 10..
- */
 console.log('Started', self);
 self.addEventListener('install', function(event) {
     self.skipWaiting();
