@@ -9,22 +9,25 @@ if ('serviceWorker' in navigator) {
 
 // Once the service worker is registered set the initial state
 function initialiseState(reg) {
-    console.log('Success: ', reg);
+    console.log('Registration success: ', reg);
 
     // Are Notifications supported in the service worker?
-    if (!('showNotification' in ServiceWorkerRegistration.prototype)) {
+    if ('showNotification' in ServiceWorkerRegistration.prototype) {
+        console.log('Notifications are supported.');
+    } else {
         console.warn('Notifications aren\'t supported.');
     }
 
     // Check the current Notification permission.
-    // If its denied, it's a permanent block until the
-    // user changes the permission
+    // If its denied, it's a permanent block until the user changes the permission
     if (Notification.permission === 'denied') {
         console.warn('The user has blocked notifications.');
     }
 
     // Check if push messaging is supported
-    if (!('PushManager' in window)) {
+    if ('PushManager' in window) {
+        console.log('Push messaging is supported.');
+    } else {
         console.warn('Push messaging isn\'t supported.');
     }
 }
