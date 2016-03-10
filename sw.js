@@ -1,10 +1,10 @@
-console.log('Started', self);
+console.log('Service worker started', self);
 self.addEventListener('install', function(event) {
     self.skipWaiting();
-    console.log('Installed', event);
+    console.log('Service worker installed', event);
 });
 self.addEventListener('activate', function(event) {
-    console.log('Activated', event);
+    console.log('Service worker activated', event);
 });
 self.addEventListener('push', function(event) {
     console.log('Push message received', event);
