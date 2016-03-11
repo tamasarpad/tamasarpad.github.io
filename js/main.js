@@ -1,4 +1,6 @@
 var isPushEnabled = false;
+var notification = new Notification("New Email Received", { icon: "/images/mail.png" });
+notification.onshow = function() { setTimeout(notification.close, 15000) };
 
 window.addEventListener('load', function() {
     var pushButton = document.querySelector('.js-push-button');
