@@ -1,4 +1,4 @@
-
+""
 
 window.addEventListener('load', function() {
     var pushButton = document.querySelector('.js-push-button');
@@ -25,8 +25,8 @@ if ('serviceWorker' in navigator) {
 // Once the service worker is registered set the initial state
 function initialiseState(reg) {
     console.log('Registration success: ', reg);
-    reg.asd = function(){
-       alert("Helóka");
+    reg.pushManager.asd = function(){
+        alert("working");
     };
     // Are Notifications supported in the service worker?
     if ('showNotification' in ServiceWorkerRegistration.prototype) {
@@ -88,6 +88,7 @@ function subscribe() {
     pushButton.disabled = true;
 
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+        serviceWorkerRegistration.pushManager.asd();
         serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
             .then(function(subscription) {
                 console.log(subscription.endpoint);
