@@ -1,6 +1,4 @@
-var isPushEnabled = false;
-var notification = new Notification("New Email Received", { icon: "/images/mail.png" });
-notification.onshow = function() { setTimeout(notification.close, 15000) };
+
 
 window.addEventListener('load', function() {
     var pushButton = document.querySelector('.js-push-button');
@@ -27,7 +25,9 @@ if ('serviceWorker' in navigator) {
 // Once the service worker is registered set the initial state
 function initialiseState(reg) {
     console.log('Registration success: ', reg);
-
+    reg.asd = function(){
+       alert("Helóka");
+    };
     // Are Notifications supported in the service worker?
     if ('showNotification' in ServiceWorkerRegistration.prototype) {
         console.log('Notifications are supported.');
