@@ -61,6 +61,7 @@ function subscribe() {
     pushButton.disabled = true;
 
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+        console.log("asd ",
         serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
             .then(function(subscription) {
                 console.log("Subscription on subscribe ", subscription);
@@ -89,7 +90,8 @@ function subscribe() {
                     pushButton.disabled = false;
                     pushButton.textContent = 'Enable Push Messages';
                 }
-            });
+            })
+        );
     });
 }
 
