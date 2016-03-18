@@ -40,9 +40,6 @@ function initialiseState(reg) {
                     return;
                 }
 
-                // Keep your server in sync with the latest subscriptionId
-                //sendSubscriptionToServer(subscription);
-
                 // Set your UI to show they have subscribed for
                 // push messages
                 pushButton.textContent = 'Disable Push Messages';
@@ -61,7 +58,7 @@ function subscribe() {
     pushButton.disabled = true;
 
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
-        console.log("asd ",
+        console.log("pushManager ", serviceWorkerRegistration.pushManager);
         serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
             .then(function(subscription) {
                 console.log("Subscription on subscribe ", subscription);
@@ -90,8 +87,7 @@ function subscribe() {
                     pushButton.disabled = false;
                     pushButton.textContent = 'Enable Push Messages';
                 }
-            })
-        );
+            });
     });
 }
 
@@ -115,9 +111,6 @@ function unsubscribe() {
                 }
 
                 var subscriptionId = pushSubscription.subscriptionId;
-                // TODO: Make a request to your server to remove
-                // the subscriptionId from your data store so you
-                // don't attempt to send them push messages anymore
 
                 // We have a subscription, so call unsubscribe on it
                 pushSubscription.unsubscribe().then(function(successful) {
