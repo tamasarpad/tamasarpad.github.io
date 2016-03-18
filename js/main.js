@@ -12,50 +12,23 @@ window.addEventListener('load', function() {
 });
 
 if ('serviceWorker' in navigator) {
-    console.log('Service Worker is supported');
     navigator.serviceWorker.register('sw.js')
         .then(initialiseState)
         .catch(function (err) {
             console.log('Error: ', err);
         });
-} else {
-    console.warn('Service workers aren\'t supported in this browser.');
 }
 
 // Once the service worker is registered set the initial state
 function initialiseState(reg) {
-    console.log('Registration success: ', reg);
-    reg.pushManager.asd = function(){
-        alert("working");
-    };
-    // Are Notifications supported in the service worker?
-    if ('showNotification' in ServiceWorkerRegistration.prototype) {
-        console.log('Notifications are supported.');
-    } else {
-        console.warn('Notifications aren\'t supported.');
-        return;
-    }
-
-    // Check the current Notification permission.
-    // If its denied, it's a permanent block until the user changes the permission
-    if (Notification.permission === 'denied') {
-        console.warn('The user has blocked notifications.');
-        return;
-    }
-
-    // Check if push messaging is supported
-    if ('PushManager' in window) {
-        console.log('Push messaging is supported.');
-    } else {
-        console.warn('Push messaging isn\'t supported.');
-        return;
-    }
+    console.log('Registration success ', reg);
 
     // We need the service worker registration to check for a subscription
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
         // Do we already have a push message subscription?
         serviceWorkerRegistration.pushManager.getSubscription()
             .then(function(subscription) {
+                console.log("Subscription on getSubscription" + subscription);
                 // Enable any UI which subscribes / unsubscribes from
                 // push messages.
                 var pushButton = document.querySelector('.js-push-button');
@@ -88,10 +61,9 @@ function subscribe() {
     pushButton.disabled = true;
 
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
-        serviceWorkerRegistration.pushManager.asd();
         serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
             .then(function(subscription) {
-                console.log(subscription.endpoint);
+                console.log("Subscription on subscribe "+ subscription);
                 // The subscription was successful
                 isPushEnabled = true;
                 pushButton.textContent = 'Disable Push Messages';
