@@ -28,7 +28,7 @@ function initialiseState(reg) {
         // Do we already have a push message subscription?
         serviceWorkerRegistration.pushManager.getSubscription()
             .then(function(subscription) {
-                console.log("Subscription on getSubscription" + subscription);
+                console.log("Subscription on getSubscription ", subscription);
                 // Enable any UI which subscribes / unsubscribes from
                 // push messages.
                 var pushButton = document.querySelector('.js-push-button');
