@@ -26,7 +26,7 @@ function initialiseState(reg) {
     // We need the service worker registration to check for a subscription
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
         // Do we already have a push message subscription?
-        serviceWorkerRegistration.pushManager.getSubscription()
+        var getSubscription = serviceWorkerRegistration.pushManager.getSubscription()
             .then(function(subscription) {
                 console.log("Subscription on getSubscription ", subscription);
                 // Enable any UI which subscribes / unsubscribes from
@@ -48,6 +48,8 @@ function initialiseState(reg) {
             .catch(function(err) {
                 console.warn('Error during getSubscription()', err);
             });
+
+        console.log("serviceWorkerRegistration.pushManager.getSubscription() ", getSubscription);
     });
 }
 
@@ -59,7 +61,7 @@ function subscribe() {
 
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
         console.log("pushManager ", serviceWorkerRegistration.pushManager);
-        serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
+        var subscribe = serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
             .then(function(subscription) {
                 console.log("Subscription on subscribe ", subscription);
                 // The subscription was successful
@@ -88,6 +90,7 @@ function subscribe() {
                     pushButton.textContent = 'Enable Push Messages';
                 }
             });
+        console.log("serviceWorkerRegistration.pushManager.subscribe() ", subscribe);
     });
 }
 
@@ -98,7 +101,7 @@ function unsubscribe() {
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
         // To unsubscribe from push messaging, you need get the
         // subscription object, which you can call unsubscribe() on.
-        serviceWorkerRegistration.pushManager.getSubscription().then(
+       serviceWorkerRegistration.pushManager.getSubscription().then(
             function(pushSubscription) {
                 // Check we have a subscription to unsubscribe
                 if (!pushSubscription) {
@@ -130,5 +133,7 @@ function unsubscribe() {
             }).catch(function(e) {
             console.error('Error thrown while unsubscribing from push messaging.', e);
         });
+
+
     });
 }
