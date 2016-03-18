@@ -63,7 +63,7 @@ function subscribe() {
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
         serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
             .then(function(subscription) {
-                console.log("Subscription on subscribe "+ subscription);
+                console.log("Subscription on subscribe ", subscription);
                 // The subscription was successful
                 isPushEnabled = true;
                 pushButton.textContent = 'Disable Push Messages';
