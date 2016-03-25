@@ -19,6 +19,7 @@ window.addEventListener('load', function() {
     });
     var event = new CustomEvent("asd");
     event.detail = "asd";
+    console.log(event);
 });
 
 window.addEventListener('streamysubscribeerror', function(e) {
