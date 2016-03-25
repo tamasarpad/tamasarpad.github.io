@@ -19,11 +19,11 @@ window.addEventListener('load', function() {
     });
     var event = new CustomEvent("asd");
     event.detail = "asd";
-    console.log(event);
+    console.log(event.originalEvent);
 });
 
 window.addEventListener('streamysubscribeerror', function(e) {
-    console.log(event);
+    console.log(e.originalEvent);
     alert("Subscribe error! " + e.detail.errorMessage);
 });
 
