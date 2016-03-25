@@ -17,10 +17,12 @@ window.addEventListener('load', function() {
             alert("Give a valid number")
         }
     });
+    var event = new CustomEvent("asd");
+    event.detail = "asd";
 });
 
 window.addEventListener('streamysubscribeerror', function(e) {
-    console.log(e);
+    console.log(event);
     alert("Subscribe error! " + e.detail.errorMessage);
 });
 
