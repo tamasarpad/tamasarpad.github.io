@@ -20,11 +20,11 @@ window.addEventListener('load', function() {
 });
 
 window.addEventListener('streamysubscribeerror', function(e) {
-    console.log(e.detail);
+    console.log(e);
     alert("Subscribe error! " + e.detail.errorMessage);
 });
 
 window.addEventListener('streamysubscribesucces', function(e) {
-    console.log(e.detail);
+    console.log(e);
     alert("Subscribe successful! Subscribe Id " + e.detail.subscriptionId);
 });
