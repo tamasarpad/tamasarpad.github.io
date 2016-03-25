@@ -11,13 +11,12 @@ window.addEventListener('load', function() {
     var button = $('#button');
     var siteId = $('#siteId');
     button.click(function () {
-        if(isInt(siteId)){
+        if(isInt(siteId.val())){
             StreamyAPI.onSubscribe(siteId.val());
         } else {
             alert("Give a valid number")
         }
     });
-    var myEvent = new CustomEvent("userLogin",{detail:{username:"davidwalsh"}});
 });
 
 window.addEventListener('streamysubscribeerror', function(e) {
