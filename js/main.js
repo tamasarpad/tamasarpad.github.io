@@ -25,5 +25,4 @@ window.addEventListener('streamysubscribeerror', function(e) {
 
 window.addEventListener('streamysubscribesuccess', function(e) {
     alert("Subscribe successful! Subscribe Id: " + e.detail.subscriptionId);
-    console.log(e.detail.subscriptionId);
 });
