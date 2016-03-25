@@ -5,7 +5,10 @@ window.addEventListener('load', function() {
     });
 });
 
-window.addEventListener('streamysubid', function(){
-    var id = StreamyAPI.getSubscriptionId();
-    console.log("subscriptionId" + id);
+window.addEventListener('streamysubscribeerror', function() {
+    prompt("Subscribe error! Check console for more information.");
+});
+
+window.addEventListener('streamysubscribesucces', function() {
+    prompt("Subscribe successful! Subscribe Id " + window.subscriptionId);
 });
