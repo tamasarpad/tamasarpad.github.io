@@ -1,7 +1,7 @@
 window.addEventListener('load', function() {
     var button = $('#button');
     var siteId = $('#siteId');
-    button.addEventListener('click', function () {
+    button.click(function () {
         StreamyAPI.onSubscribe(siteId.val());
     });
 });
