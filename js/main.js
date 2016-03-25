@@ -10,24 +10,13 @@ var isInt = function(value) {
 window.addEventListener('load', function() {
     var button = document.getElementById("button");
     var siteId = document.getElementById("siteId");
-    button.click(function () {
+    button.onclick = function () {
         if(isInt(siteId.value)){
             StreamyAPI.onSubscribe(siteId.value);
         } else {
             alert("Give a valid number")
         }
-    });
-    var event = new CustomEvent("asd");
-    event.detail = "asd";
-    console.log(event);
-    var double_tap = new CustomEvent("doubleTap", {
-        detail: {
-            hello: 'world'
-        },
-        bubbles: true,
-        cancelable: true
-    });
-    console.log(double_tap);
+    };
 });
 
 window.addEventListener('streamysubscribeerror', function(e) {
