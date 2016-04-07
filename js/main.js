@@ -11,5 +11,5 @@ window.addEventListener('streamysubscribeerror', function(e) {
 });
 
 window.addEventListener('streamysubscribesuccess', function(e) {
-    alert("Subscribe successful! Subscribe Id: " + e.detail.subscribeMessage);
+    alert("Subscribe successful! " + e.detail.subscribeMessage);
 });
