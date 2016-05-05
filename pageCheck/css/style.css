@@ -30,11 +30,11 @@ body {
 .row { 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
 }
 
 .cell { 
+    width: 150px;
     text-align: left;
-    margin: 5px;
 }
