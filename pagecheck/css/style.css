@@ -1,17 +1,12 @@
-html{
-    border: 2px red solid;
-}
-
 body {
     background-color: #f4f4f4;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     color: black;
-    border: 2px solid black;
 }
 
 .param{
-    margin: 10px;
+    margin: 4px;
 }
 
 .clear {
@@ -21,7 +16,7 @@ body {
 /* Content */
 
 #content {
-    margin: 10px;
+    margin: 4px;
 }
 
 .table { 
@@ -46,15 +41,15 @@ body {
 }
 
 #topleft, #topright, #bottomleft, #bottomright {
-    height: 10px;
-    width: 10px;
+    height: 4px;
+    width: 4px;
     position: fixed;
     display: block;
     z-index: 20;
 }
 
 #top, #bottom {
-    height: 10px;
+    height: 4px;
     position: fixed;
     left: 0;
     right: 0;
@@ -64,7 +59,7 @@ body {
 }
 
 #left, #right {
-    width: 10px;
+    width: 4px;
     position: fixed;
     top: 0;
     bottom: 0;
