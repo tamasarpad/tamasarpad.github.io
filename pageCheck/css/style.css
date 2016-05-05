@@ -5,19 +5,8 @@ body {
     color: black;
 }
 
-input{
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 400;
-    margin-top: 5px;
-}
-
-button{
-    background-color: #666666;
-    border: none;
-    border-radius: 2px;
-    color: white;
-    font-family: 'Raleway', sans-serif;
+.param{
+    margin: 10px;
 }
 
 .clear {
@@ -36,9 +25,4 @@ button{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-}
-
-#button{
-    width: 80px;
-    height: 25px;
 }
