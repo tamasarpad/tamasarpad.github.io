@@ -20,16 +20,19 @@ body {
 }
 
 .table { 
-    display: table;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .row { 
-    margin-bottom: 5px;
-    display: table-row; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .cell { 
     margin: 5px;
-    display: table-cell; 
 }
