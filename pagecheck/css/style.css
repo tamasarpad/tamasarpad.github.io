@@ -1,0 +1,42 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: black;
+    border: 2px solid black;
+}
+
+.param{
+    margin: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+/* Content */
+
+#content {
+    margin: 0;
+}
+
+.table { 
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.row { 
+    margin-bottom: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cell { 
+    width: 150px;
+    text-align: left;
+}
