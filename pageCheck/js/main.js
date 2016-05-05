@@ -6,6 +6,10 @@ $(window).resize(function(event) {
 	d();
 });
 
+$(window).scroll(function(event) {
+	d();
+});
+
 function d(){
 	var x = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var y = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
