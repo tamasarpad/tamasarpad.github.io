@@ -21,7 +21,7 @@ body {
 /* Content */
 
 #content {
-    margin: 0;
+    margin: 10px;
 }
 
 .table { 
@@ -43,4 +43,61 @@ body {
 .cell { 
     width: 150px;
     text-align: left;
+}
+
+#topleft, #topright, #bottomleft, #bottomright {
+    height: 10px;
+    width: 10px;
+    position: fixed;
+    display: block;
+    z-index: 20;
+}
+
+#top, #bottom {
+    height: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: #ccff00;
+    z-index: 30
+}
+
+#left, #right {
+    width: 10px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: block;
+    background-color: #ccff00;
+    z-index: 50;
+}
+
+#top {
+    top: 0;
+}
+#bottom {
+    bottom: 0;
+}
+#left {
+    left: 0;
+}
+#right {
+    right: 0;
+}
+#topleft {
+    top: 0;
+    left: 0;
+}
+#topright {
+    top: 0;
+    right: 0;
+}
+#bottomleft {
+    bottom: 0;
+    left: 0;
+}
+#bottomright {
+    bottom: 0;
+    right: 0;
 }
