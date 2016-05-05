@@ -15,10 +15,10 @@ function d(){
 	var y = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 	$("#sX").text(screen.width);
 	$("#sY").text(screen.height);
-	$("#wX").text(window.width);
-	$("#wY").text(window.height);
-	$("#dX").text(document.width);
-	$("#dY").text(document.width);
+	$("#wX").text($(window).width());
+	$("#wY").text($(window).height());
+	$("#dX").text($(document).width());
+	$("#dY").text($(document).height());
 	$("#vX").text(x);
 	$("#vY").text(y);
 
