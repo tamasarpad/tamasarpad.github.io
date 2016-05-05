@@ -17,9 +17,16 @@ body {
 
 #content {
     margin: 0;
+}
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: left;
+.table { 
+    display: table; 
+}
+
+.row { 
+    display: table-row; 
+}
+
+.cell { 
+    display: table-cell; 
 }
