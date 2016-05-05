@@ -20,13 +20,16 @@ body {
 }
 
 .table { 
-    display: table; 
+    display: table;
+    margin: 10px;
 }
 
 .row { 
+    margin-bottom: 5px;
     display: table-row; 
 }
 
 .cell { 
+    margin: 5px;
     display: table-cell; 
 }
