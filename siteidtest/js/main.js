@@ -7,20 +7,18 @@ $(document).ready(function() {
     	StreamyAPI.onSubscribe(inputSiteId.val());
     });
     
-    inputSiteId.change(function(event) {
+    inputSiteId.on("change paste keyup", function() {
     	message.text('');
     });
 });
 
 $(window).on('streamysubscribeerror', function(e) {
-    alert("Subscribe error! " + e.detail.errorMessage);
-    message.text(e.detail.errorMessage);
-    console.error(e.detail.errorMessage);
+    message.text("Error: " + e.detail.errorMessage);
+    console.error("Error: " + e.detail.errorMessage);
 });
 
 $(window).on('streamysubscribesuccess', function(e) {
-    alert("Subscribe successful! " + e.detail.subscribeMessage);
-    message.text(e.detail.subscribeMessage);
-    console.log(e.detail.subscribeMessage);
+    message.text("Succes: " + e.detail.subscribeMessage);
+    console.log("Succes: " + e.detail.subscribeMessage);
 });
 
