@@ -1,9 +1,9 @@
 window.addEventListener('load', function() {
-    var button = document.getElementById("button");
-    var siteId = document.getElementById("siteId");
-    button.onclick = function () {
-        StreamyAPI.onSubscribe(siteId.value);
-    };
+    var button = $("#button");
+    var siteId = $("#siteId");
+    button.click(function(event) {
+    	StreamyAPI.onSubscribe(siteId.value);
+    });
 });
 
 window.addEventListener('streamysubscribeerror', function(e) {
@@ -13,6 +13,6 @@ window.addEventListener('streamysubscribeerror', function(e) {
 
 window.addEventListener('streamysubscribesuccess', function(e) {
     alert("Subscribe successful! " + e.detail.subscribeMessage);
-    document.getElementById("subId").innerHTML(e.detail.subscribeMessage);
+    $("#subId").text(e.detail.subscribeMessage);
     console.log(e.detail.subscribeMessage);
 });
