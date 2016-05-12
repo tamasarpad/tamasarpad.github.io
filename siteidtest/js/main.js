@@ -13,6 +13,6 @@ window.addEventListener('streamysubscribeerror', function(e) {
 
 window.addEventListener('streamysubscribesuccess', function(e) {
     alert("Subscribe successful! " + e.detail.subscribeMessage);
-    document.getElementById("subscribeId").html(e.detail.subscribeMessage);
+    document.getElementById("subId").html(e.detail.subscribeMessage);
     console.log(e.detail.subscribeMessage);
 });
