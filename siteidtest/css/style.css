@@ -24,6 +24,9 @@ button{
     clear: both;
 }
 
+.settings{
+    margin: 10px;
+}
 /* Content */
 
 #content {
@@ -38,6 +41,7 @@ button{
 }
 
 #button{
+    margin: 10px;
     width: 80px;
     height: 25px;
 }
