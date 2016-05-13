@@ -20,10 +20,6 @@ button{
     font-family: 'Raleway', sans-serif;
 }
 
-    button:hover {
-        background-color:  #69d2e7;
-    }
-
 small{
     margin: 2px;
     font-size: 14px;
@@ -59,8 +55,4 @@ small{
     margin-top: 5px;
     width: 80px;
     height: 25px;
-}
-
-#message{
-    color: red;
 }

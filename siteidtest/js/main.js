@@ -13,11 +13,13 @@ $(document).ready(function() {
 });
 
 $(window).on('onstreamynotificationssubscribeerror', function(e) {
-    message.text("Error: " + e.detail.message);
+    message.css('color', 'red');
+    message.text(e.detail.message);
     console.error("Error: " + e.detail.message);
 });
 
 $(window).on('onstreamynotificationssubscribesuccess', function(e) {
-    message.text("Succes: " + e.detail.message);
+    message.css('color', 'green');
+    message.text(e.detail.message);
     console.log("Succes: " + e.detail.message);
 });
