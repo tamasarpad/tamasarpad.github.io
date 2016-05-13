@@ -4,7 +4,7 @@ var message = $("#message");
 
 $(document).ready(function() {
     btnSub.click(function(event) {
-        StreamyAPI.subscribeForNotifications(inputSiteId.val());
+        //StreamyAPI.subscribeForNotifications(inputSiteId.val());
 
         // No longer in use !!!
     	StreamyAPI.onSubscribe(inputSiteId.val());
