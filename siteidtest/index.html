@@ -9,18 +9,21 @@
 <body>
     <div id="content">
 
-        <div class="settings">
-                <label><p>SiteId</p>
-                    <input type="text" id="siteId" value="1234567890">
-                </label>
+        <div class="block">
+            <p>SiteId</p>
+            <input type="text" id="siteId" value="1234567890">
+            <button id="button">Subscribe</button>
         </div>
 
-        <button id="button">Subscribe</button>
+        <div class="block">
+            <p id="message">&nbsp;</p>
+        </div>
 
-        <div id="message"></div>
+        <div class="block">
+            <small>Streamy's javaScriptInterface and event names changed</small>
+            <small><a href="https://confluenceos.doclerholding.com/display/SONR/Streamy+Notification+Client+API">Check this for more information</a></small>
+        </div>
 
-        <p>Note: Streamy's javaScriptInterface and event names changed</p>
-        <p><a href="https://confluenceos.doclerholding.com/display/SONR/Streamy+Notification+Client+API">Check this for more information</a></p>
     </div>
      
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
