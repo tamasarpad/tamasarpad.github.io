@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
     
     inputSiteId.on("change paste keyup", function() {
-    	message.text(&nbsp;);
+    	message.html("&nbsp;");
     });
 });
 
