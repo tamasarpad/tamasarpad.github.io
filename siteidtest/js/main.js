@@ -23,3 +23,8 @@ $(window).on('onstreamynotificationssubscribesuccess', function(e) {
     message.text(e.detail.message);
     console.log("Succes: " + e.detail.message);
 });
+
+(function(){
+    var rgb = window.getComputedStyle(document.body, null).backgroundColor;
+    console.log(rgb);
+})();
