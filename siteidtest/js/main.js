@@ -15,7 +15,7 @@ $(document).ready(function() {
 $(window).on('onstreamynotificationssubscribeerror', function(e) {
     message.css('color', 'red');
     
-    if (e.detail && e.detail.message) {
+    if (typeof e !== 'undefined' && e.detail && e.detail.message) {
         message.text(e.detail.message);    
         console.error("Error: " + e.detail.message);
     } else {
@@ -30,7 +30,7 @@ $(window).on('onstreamynotificationssubscribesuccess', function(e) {
     message.css('color', 'green');
     message.text(e.detail.message);
     
-    if (e.detail && e.detail.message) {
+    if (typeof e !== 'undefined' && e.detail && e.detail.message) {
         message.text(e.detail.message);    
         console.log("Success: " + e.detail.message);
     } else {
