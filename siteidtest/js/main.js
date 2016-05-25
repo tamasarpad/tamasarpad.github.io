@@ -36,7 +36,7 @@ $(window).on('onstreamynotificationssubscribesuccess', function(e) {
     } else {
         str = JSON.stringify(e, null, 4)
         message.text(str);    
-        console.error("Error: " + str);  
+        console.error("Success: " + str);  
     }  
 });
 
