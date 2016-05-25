@@ -15,15 +15,15 @@ $(document).ready(function() {
 $(window).on('onstreamynotificationssubscribeerror', function(e) {
     message.css('color', 'red');
     
-    if (typeof e !== 'undefined' && e.detail && e.detail.message) {
-        message.text(e.detail.message);    
-        console.error("Error: " + e.detail.message);
-    } else {
-        str = JSON.stringify(e, null, 4)
-        message.text(str);    
-        console.error("Error: " + str);
+    // if (typeof e !== 'undefined' && e.detail && e.detail.message) {
+    //     message.text(e.detail.message);    
+    //     console.error("Error: " + e.detail.message);
+    // } else {
+    //     str = JSON.stringify(e, null, 4)
+    //     message.text(str);    
+    //     console.error("Error: " + str);
         
-    }
+    // }
 });
 
 $(window).on('onstreamynotificationssubscribesuccess', function(e) {
