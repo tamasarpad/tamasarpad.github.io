@@ -34,7 +34,7 @@
     <script lang="javascript">
         window.onerror = function (msg, url, lineNo, columnNo, error) {
             // ... handle error ...
-            document.getElementById('debugDiv').innerHTML += '<p>url:' + url + '<br/>line:' + lineNo + '<br/>msg:' + msg + '<br/>error:' + error + '</p>';
+            document.getElementById('debugDiv').innerHTML += '<p>url:' + url + '<br/>line:' + lineNo + '<br/>column:' + columnNo + '<br/>msg:' + msg + '<br/>error:' + error + '</p>';
 
             return false;
         }
