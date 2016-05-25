@@ -44,5 +44,5 @@ $(window).on('onstreamynotificationssubscribesuccess', function(e) {
 
 (function(){
     var rgb = window.getComputedStyle(document.body, null).backgroundColor;
-    console.log(rgb);
+    console.log(rgb+ 'asdasd');
 })();
