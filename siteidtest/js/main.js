@@ -29,7 +29,15 @@ $(window).on('onstreamynotificationssubscribeerror', function(e) {
 $(window).on('onstreamynotificationssubscribesuccess', function(e) {
     message.css('color', 'green');
     message.text(e.detail.message);
-    console.log("Succes: " + e.detail.message);
+    
+    if (e.detail && e.detail.message) {
+        message.text(e.detail.message);    
+        console.log("Success: " + e.detail.message);
+    } else {
+        str = JSON.stringify(e, null, 4)
+        message.text(str);    
+        console.error("Error: " + str);  
+    }  
 });
 
 (function(){
