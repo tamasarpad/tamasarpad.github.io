@@ -13,7 +13,7 @@ $(document).ready(function() {
 });
 
 $(window).on('onstreamynotificationssubscribeerror', function(e) {
-    message.css('color', 'red');
+  //  message.css('color', 'red');
     
     // if (typeof e !== 'undefined' && e.detail && e.detail.message) {
     //     message.text(e.detail.message);    
@@ -24,9 +24,11 @@ $(window).on('onstreamynotificationssubscribeerror', function(e) {
     //     console.error("Error: " + str);
         
     // }
+    console.error('error');
 });
 
 $(window).on('onstreamynotificationssubscribesuccess', function(e) {
+    console.log('success');
     // message.css('color', 'green');
     // message.text(e.detail.message);
     
