@@ -39,8 +39,3 @@ $(window).on('onstreamynotificationssubscribesuccess', function(e) {
         console.error("Success: " + str);  
     }  
 });
-
-(function(){
-    var rgb = window.getComputedStyle(document.body, null).backgroundColor;
-    console.log(rgb);
-})();
