@@ -17,7 +17,7 @@ $(window).on('onstreamynotificationssubscribeerror', function(e) {
     
     if (typeof e !== 'undefined' && e.detail && e.detail.message) {
         message.text(e.detail.message);    
-        console.error("Error: " + e.detail.message);
+        console.error("Error: " + e.detail.message + " " + e.detail.alreadySubscribed);
     } else {
         str = JSON.stringify(e, null, 4)
         message.text(str);    
@@ -32,7 +32,7 @@ $(window).on('onstreamynotificationssubscribesuccess', function(e) {
     
     if (typeof e !== 'undefined' && e.detail && e.detail.message) {
         message.text(e.detail.message);    
-        console.log("Success: " + e.detail.message);
+        console.log("Success: " + e.detail.message + " " + e.detail.alreadySubscribed);
     } else {
         str = JSON.stringify(e, null, 4)
         message.text(str);    
