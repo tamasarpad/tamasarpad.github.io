@@ -5,6 +5,8 @@ var message = $("#message");
 $(document).ready(function() {
     btnSub.click(function(event) {
         StreamyAPI.subscribeForNotifications(inputSiteId.val());
+        message.css('color', 'orange');
+        message.text('Subscribing...'); 
     });
     
     inputSiteId.on("change paste keyup", function() {
@@ -28,7 +30,6 @@ $(window).on('onstreamynotificationssubscribeerror', function(e) {
 
 $(window).on('onstreamynotificationssubscribesuccess', function(e) {
     message.css('color', 'green');
-    message.text(e.detail.message);
     
     if (typeof e !== 'undefined' && e.detail && e.detail.message) {
         message.text(e.detail.message);    
